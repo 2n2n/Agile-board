@@ -15,5 +15,23 @@ class Ticket {
     }
 }
 
-$ticket1 = new Ticket();
-print_r($ticket1->getNumber());
+class TicketGenerator {
+    public static $qs = [];
+    public static function make() {
+        array_push(self::$qs, new Ticket);
+    }
+
+    // public static function remove() {
+    //     array_shift(self::$qs);
+    // }
+}
+
+
+TicketGenerator::make();
+TicketGenerator::make();
+TicketGenerator::make();
+
+$queue = TicketGenerator::$qs;
+print_r($queue);
+// TicketGenerator::remove();
+// print_r(TicketGenerator::$qs);
