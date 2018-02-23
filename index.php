@@ -21,9 +21,9 @@ class TicketGenerator {
         array_push(self::$qs, new Ticket);
     }
 
-    // public static function remove() {
-    //     array_shift(self::$qs);
-    // }
+    public static function remove() {
+        array_shift(self::$qs);
+    }
 }
 
 
@@ -33,5 +33,5 @@ TicketGenerator::make();
 
 $queue = TicketGenerator::$qs;
 print_r($queue);
-// TicketGenerator::remove();
-// print_r(TicketGenerator::$qs);
+TicketGenerator::remove();
+print_r(TicketGenerator::$qs);
